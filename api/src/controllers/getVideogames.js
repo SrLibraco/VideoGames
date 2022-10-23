@@ -51,32 +51,6 @@ const totalVideogames = async () => {
     return dbGamesApi;
 };
 
-
-/* const getVideogames = async () => {
-    let gamesInfoAll = [];
-    let gamesInfoAllB = [];
-    let gamesInfoAllC = [];
-    gamesInfoAll = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`); 
-    let games = gamesInfoAll.data.next;
-        gamesInfoAll = [...gamesInfoAll.data.results];
-        gamesInfoAllB = await axios.get(games);
-            games = gamesInfoAllB.data.next;
-        gamesInfoAllB = [...gamesInfoAllB.data.results];
-        gamesInfoAllC = await axios.get(games);
-        gamesInfoAllC = [...gamesInfoAllC.data.results];
-    return [... gamesInfoAll, ...gamesInfoAllB, ...gamesInfoAllC].map((games) => {
-        return {
-            id: games.id,
-            name: games.name,
-            date: games.released,
-            genres: games.genres?.map((gen) => gen.name),
-            rating: games.rating,
-            platforms: games.platforms?.map((plat) => plat.platform.name),
-            image: games.background_image
-        };
-    }); 
-}; */
-
 module.exports = {
     getVideogames,
     getVideogamesDb,

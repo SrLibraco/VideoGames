@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const { getVideogames, getVideogamesDb, totalVideogames } = require('../../controllers/getVideogames.js');
+const { getVideogamesDb, totalVideogames } = require('../../controllers/getVideogames.js');
 const postVideogames = require('../../controllers/postVideogames.js');
 const getByName = require('../../controllers/getByName.js');
 
@@ -19,21 +19,9 @@ router.get('/videogames', async (req, res) => {
     const allVideogamesDb = await getVideogamesDb(name);
     let gamesInDb = allVideogamesDb.filter(game => game.name.toLowerCase().includes(name.toLowerCase()));
     let allGames = gamesInDb.concat(allVideogames);
-    allGames.length? res.status(200).send(allGames.slice(0,15)) : res.status(400).send('Not name found.');
-    
+    allGames.length? res.status(200).send(allGames.slice(0,15)) : res.status(400).send('Not name found.');    
 }
 });
- 
-/* router.get('/videogames', async (req, res) => {
-    try{
-        const { name } = req.query;
-        getByName(name); 
-        const gamesByName = await getByName(name);
-        res.status(200).send(gamesByName)
-    }catch (error){
-        res.status(404).send('Game not found');
-    };
-}); */
 
 router.post('/videogames', async (req, res) => {
     try {
