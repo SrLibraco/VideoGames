@@ -4,7 +4,6 @@ const { Genres } = require('../../db.js')
 const genresToDb = require('../../controllers/genresToDb.js');
 
 router.get('/genres', async (req, res) => {
-    
     try{
         await genresToDb()
         const allGenres = await Genres.findAll();
