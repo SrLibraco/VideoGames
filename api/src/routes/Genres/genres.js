@@ -4,8 +4,9 @@ const { Genres } = require('../../db.js')
 const genresToDb = require('../../controllers/genresToDb.js');
 
 router.get('/genres', async (req, res) => {
-    genresToDb();
+    
     try{
+        await genresToDb()
         const allGenres = await Genres.findAll();
         res.status(200).send(allGenres);
     }catch (error) {
