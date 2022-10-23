@@ -1,14 +1,12 @@
 const { Router } = require('express');
 const router = Router();
-const getDetail = require('../../controllers/getDetail.js');
+const { dbApiDetail } = require('../../controllers/getDetail.js');
 
 router.get('/videogame/:id', async (req, res) => {
-    
+    const { id } = req.params;
+    let game = await dbApiDetail(id);
     try {
-        const { id } = req.params;
-        getDetail(id);
-        const game = await getDetail(id);
-        res.status(200).send(game);
+        game ? res.status(200).send(game) : res.status(404).send('Not id found.')
     }catch (error){
         res.status(404).send('Game not found');
     }

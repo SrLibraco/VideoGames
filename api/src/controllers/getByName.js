@@ -22,25 +22,4 @@ const getByName = async (name) => {
     };
 };
 
-/* const getByName = async (name) => {
-    try {
-    losKinse = await axios.get(`https://api.rawg.io/api/games?search=${name}?key=${API_KEY}$page_size=15`);
-    const theNames = losKinse.data.map((games) => {
-            return {
-                id: games.id,
-                name: games.name,
-                date: games.released,
-                genres: games.genres?.map((gen) => gen.name),
-                rating: games.rating,
-                platforms: games.platforms?.map((plat) => plat.platform.name),
-                image: games.background_image
-            };
-            
-        });  const filteredName = theNames.filter(fil => fil.name.toLowerCase().includes(name.toLowerCase()));  
-    return filteredName;
-    }catch (error){
-        return "Invalid name."
-    }
-}; */
-
 module.exports = getByName;
