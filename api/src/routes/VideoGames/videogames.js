@@ -8,7 +8,6 @@ router.get('/videogames', async (req, res) => {
     const { name } = req.query;
     if(!name){
     try {
-        totalVideogames();
         const apiVideogames = await totalVideogames()
         res.status(200).send(apiVideogames);
     }catch (error){ 
