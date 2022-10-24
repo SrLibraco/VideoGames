@@ -4,9 +4,9 @@ export const GAME_BY_ID = 'GAME_BY_ID';
 export const GAME_BY_NAME = 'GAME_BY_NAME';
 export const CREATE_GAME = 'CREATE_GAME';
 
-export const getVideogames = () => {
+export function getVideogames() {
     return async function (dispatch) {
-        const videogames = await axios.get('http:localhost:3001/videogames');
+        const videogames = await axios.get('http://localhost:3001/videogames');
         return dispatch({
             type: GET_VIDEOGAMES,
             payload: videogames.data

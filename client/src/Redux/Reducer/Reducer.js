@@ -1,8 +1,8 @@
-import { GET_VIDEOGAMES } from "../Actions/Actions.js";
+import { GAME_BY_ID, GET_VIDEOGAMES } from "../Actions/Actions.js";
 
 const initialState = {
     videogames: [],
-
+    gamesDetail: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -12,6 +12,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 videogames: action.payload,
             };
+        case GAME_BY_ID:
+            return{
+                ...state,
+                gamesDetail: action.payload
+            }
             default:
                 return {
                     ...state
