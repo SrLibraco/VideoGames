@@ -46,7 +46,7 @@ export default function Home (){
                         <Card 
                             name = { game.name }
                             image = { game.image }
-                            genre = { game.genres }
+                            genre = { game.genres?.map(gen => (gen.name ? gen.name : gen)).join(' | ') }
                             />
                         </Link>
                     </div>
