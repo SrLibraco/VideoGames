@@ -5,6 +5,10 @@ export default function Pagination({gamesPerPage, currentPage, allGames, paginat
     for(let i = 1; i <= Math.ceil(allGames / gamesPerPage); i++){
         pageNumber.push(i);
     }
+    if(currentPage === pageNumber.length +1){
+        pagination(1);
+    };
+    
     return(
         <div>
             <button onClick={()=>pagination(currentPage===1 ? pageNumber.length : currentPage -1)}>  «  </button>

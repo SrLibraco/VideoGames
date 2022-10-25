@@ -14,7 +14,7 @@ export function getVideogames() {
     };
 };
 
-export const getGameDetails = (id) => {
+export function getGameDetails(id) {
     return async function (dispatch){
         const gameDetail = await axios.get(`http://localhost:3001/videogame/${id}`);
         return dispatch({
@@ -24,19 +24,19 @@ export const getGameDetails = (id) => {
     };
 };
 
-export const getGameName = (name) => {
+export function getGameName(name) {
     return async function (dispatch){
-        const getGameName = await axios.get(`http://localhost:3001/videogames?name=${name}`);
+        const gameNames = await axios.get(`http://localhost:3001/videogames?name=${name}`);
         return dispatch({
             type: GAME_BY_NAME,
-            payload: getGameName.data
+            payload: gameNames.data
         });
     };
 };
 
-export const createGame = (videogame) => {
+export function createGame(videogame) {
     return async function (dispatch){
-        const gameCreated = await axios.get('http://localhost:3001/videogame', videogame);
+        const gameCreated = await axios.get('http://localhost:3001/videogames', videogame);
         return dispatch({
             type: CREATE_GAME,
             payload: gameCreated.payload

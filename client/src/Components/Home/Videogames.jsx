@@ -5,6 +5,7 @@ import { getVideogames } from '../../Redux/Actions/Actions';
 import { Link } from 'react-router-dom';
 import Pagination from '../Pagination/Pagination';
 import Card from '../Card/Card';
+import SearchBar from '../SearchBar/SearchBar';
 
 export default function Home (){
     const dispatch = useDispatch();
@@ -31,6 +32,7 @@ export default function Home (){
     return(
         <div>
             <h1>Juegos Para Todos</h1>
+            <SearchBar />
             <button onClick={e => {handleClick(e)}}>Recargar.</button>
             <Pagination
                         gamesPerPage={gamesPerPage}
