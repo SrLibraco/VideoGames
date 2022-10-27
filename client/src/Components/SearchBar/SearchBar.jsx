@@ -25,8 +25,7 @@ export default function SearchBar() {
     return(
         <div>
             <form onSubmit={e => handleSubmit(e)}>
-                <div>
-                    <span htmlFor='name'></span>
+                <div>                    
                     <input
                         type='text'
                         id='name'

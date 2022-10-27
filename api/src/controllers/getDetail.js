@@ -12,7 +12,7 @@ const getDetail = async (id) => {
             description: idGame.description,
             date: idGame.release,
             rating: idGame.rating,
-            genre: idGame.genres?.map((gen) => gen.name),
+            genre: idGame.genres?.map((gen) => gen.name).join(' | '),
             platforms: idGame.platforms?.map((plat) => plat.platform.name),
             image: idGame.background_image
     };

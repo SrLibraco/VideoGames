@@ -1,6 +1,6 @@
 const { Videogames, Genres } = require('../db.js');
 
-const postVideogames = async (name, description, date, rating, platform, genre, image) => {
+const postVideogames = async (name, description, date, rating, platform, genre, background_image) => {
     const videogame = await Videogames.create({
         name, 
         description, 
@@ -8,7 +8,7 @@ const postVideogames = async (name, description, date, rating, platform, genre, 
         rating, 
         platform,
         genre,
-        image
+        background_image
     });
     const relation = await Genres.findAll({
         where: {

@@ -4,7 +4,6 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import LandingPage from './Components/LandingPage/LandingPage';
 import Home from './Components/Home/Videogames.jsx'
 import GameDetail from './Components/GameDetail/GameDetail.jsx';
-import SearchBar from './Components/SearchBar/SearchBar';
 /* import Nav from './Components/Nav/Nav.jsx';
 import GameCreate from './Components/GameCreate/GameCreate.jsx';
 import GameDetail from './Components/GameDetail/GameDetail.jsx'; */
