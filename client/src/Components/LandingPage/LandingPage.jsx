@@ -3,6 +3,7 @@ import elVideo from '../../Archives/BackGround.mp4'
 import './LandingPage.css';
 
 export default function LandingPage() {
+
     return(
        
         <div className="VideoBack">

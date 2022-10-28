@@ -13,7 +13,7 @@ const getByName = async (name) => {
                 genres: game.genres?.map((gen) => gen.name),
                 rating: game.rating,
                 platform: game.platforms?.map((plat) => plat.platform.name),
-                image: game.background_image
+                background_image: game.background_image
             };
         });
         return theGames;

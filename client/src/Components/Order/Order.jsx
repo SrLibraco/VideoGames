@@ -3,17 +3,19 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getGenres, filterByGenre } from "../../Redux/Actions/Actions";
 
-export default function GenreSelection({allGenres}) {
-
+function GenreSelection({allGenres}) {
 const dispatch = useDispatch();
-
 
 useEffect(() => {
     dispatch(getGenres());
 }, [dispatch]);
 
+
+
 function handleGenreFilter(e){
+    e.preventDefault();
     dispatch(filterByGenre(e.target.value));
+
 };
 
     return(
@@ -26,10 +28,13 @@ function handleGenreFilter(e){
                         <option key={e.id} value={e.name} >
                         {e.name}
                 </option>
-            )               
-            })
-        }
+            );              
+            })};
             </select>
         </div>
-    )
-} 
+    );
+};
+
+
+
+export default GenreSelection;

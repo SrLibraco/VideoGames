@@ -9,17 +9,17 @@ const getVideogames = async () => {
     try{
         for(let i = 0; i < 5; i++){
             const apiInfo = await axios.get(apiUrl);
-            apiInfo.data.results.map(game => {
+                apiInfo.data.results.map(game => {
                 gamesInfo.push({
                     id: game.id,
-            name: game.name,
-            date: game.released,
-            genres: game.genres?.map((gen) => gen.name),
-            rating: game.rating,
-            platforms: game.platforms?.map((plat) => plat.platform.name),
-            image: game.background_image
+                    name: game.name,
+                    date: game.released,
+                    genres: game.genres?.map((gen) => gen.name),
+                    rating: game.rating,
+                    platforms: game.platforms?.map((plat) => plat.platform.name),
+                    background_image: game.background_image
+                    });
                 });
-            });
             apiUrl = apiInfo.data.next;
         };
         return gamesInfo;

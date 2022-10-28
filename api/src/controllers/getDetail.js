@@ -14,7 +14,7 @@ const getDetail = async (id) => {
             rating: idGame.rating,
             genre: idGame.genres?.map((gen) => gen.name).join(' | '),
             platforms: idGame.platforms?.map((plat) => plat.platform.name),
-            image: idGame.background_image
+            background_image: idGame.background_image
     };
     return gameDetail;
     }catch (error){

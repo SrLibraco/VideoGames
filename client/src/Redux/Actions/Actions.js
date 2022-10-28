@@ -5,9 +5,10 @@ export const GAME_BY_NAME = 'GAME_BY_NAME';
 export const CREATE_GAME = 'CREATE_GAME';
 export const SHOW_CREATED_GAMES = 'SHOW_CREATED_GAMES';
 export const GET_GENRES = 'GET_GENRES';
-export const ORDER_BY_LETTER = 'ORDER_BY_LETTER';
+export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const ORDER_BY_RATING = 'ORDER_BY_RATING';
 export const FILTER_GENRE = 'FILTER_GENRE';
+export const FILTER_CREATED = 'FILTER_CREATED';
 
 export function getVideogames() {
     return async function (dispatch) {
@@ -63,5 +64,26 @@ export function filterByGenre(genre){
     return{
         type: FILTER_GENRE,
         payload: genre
+    };
+};
+
+export function orderByName(orderName){
+    return{
+        type: ORDER_BY_NAME,
+        payload: orderName
+    };
+};
+
+export function orderByRating(rating){
+    return{
+        type: ORDER_BY_RATING,
+        payload: rating
+    };
+};
+
+export function filterByCreated(created){
+    return{
+        type: FILTER_CREATED,
+        payload: created
     };
 };

@@ -24,8 +24,8 @@ router.get('/videogames', async (req, res) => {
 
 router.post('/videogames', async (req, res) => {
     try {
-    const {name, description, date, rating, platform, genre} = req.body;
-    await postVideogames(name, description, date, rating, platform, genre);
+    const {name, description, date, rating, platforms, genres, background_image} = req.body;
+    await postVideogames(name, description, date, rating, platforms, genres, background_image);
     res.status(201).send(`Game created successfully. "${name}"`);
     }catch (error){
         res.status(400).send('Game cannot created.')

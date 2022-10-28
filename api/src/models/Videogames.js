@@ -27,14 +27,22 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    platform: {
-      type: DataTypes.STRING,
+    platforms: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
-    genre: {
-      type: DataTypes.STRING,
+    genres: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false
-    },   
+    },
+    background_image: {
+      type: DataTypes.STRING,
+    },
+    createInDB: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
+    }
   },
    { timestamps: false }
    );
