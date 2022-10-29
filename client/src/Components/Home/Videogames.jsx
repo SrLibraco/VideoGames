@@ -50,46 +50,44 @@ export default function Home (){
 
     return(
         <div className='videogames'>
-            <video src={elVideo} autoPlay={true} muted={true} loop={true}></video>
-            <h1>Juegos Para Todos</h1>
+                <video src={elVideo} autoPlay={true} muted={true} loop={true}></video>
+                <h1>Juegos Para Todos</h1>
             <div className='filters'>
             <div><SearchBar className='search' /></div>
-            <div className='genre'><GenreSelection 
-                allGenres={allGenre}
-            /></div>
+            <div className='genre'><GenreSelection allGenres={allGenre} /></div>
             <div className='nameOrder'>
-             <select className ='selName' onChange={e => handleByName(e)}>
+                    <select className ='selName' onChange={e => handleByName(e)}>
                                 <option value="alpha">Name Order</option>
                                 <option value="asc">Sort:  A - Z</option>
                                 <option value="des">Sort:  Z - A</option>
-                            </select>
+                    </select>
             </div>
             <div className='rating'>
-                <select className='selRating' onChange={e => handleByRating(e)}>
-                        <option value="Rating">Rating</option>
-                        <option value="Hight">Hight Rating</option>
-                        <option value="Low">Low Rating</option>
-                </select>
+                    <select className='selRating' onChange={e => handleByRating(e)}>
+                                <option value="Rating">Rating</option>
+                                <option value="Hight">Hight Rating</option>
+                                <option value="Low">Low Rating</option>
+                    </select>
             </div>
             <div className='create'>
-                <select className='selCreate' onChange={e => handleByCreated(e)}>
-                    <option value="Games">All Games</option>
-                    <option value="api">Api Games</option>
-                    <option value="Created">Created Games</option>
-                </select>
+                    <select className='selCreate' onChange={e => handleByCreated(e)}>
+                                <option value="Games">All Games</option>
+                                <option value="api">Api Games</option>
+                                <option value="Created">Created Games</option>
+                    </select>
             </div>
             </div>
-            <button className='recBtn' onClick={e => {handleClick(e)}}>Reload Games.</button>
+                    <button className='recBtn' onClick={e => {handleClick(e)}}>Reload Games.</button>
             <div className='pagination'>
-                <Pagination 
+                    <Pagination 
                         gamesPerPage={gamesPerPage}
                         allGames={allGames.length}
                         pagination={pagination}
                         currentPage={currentPage}
-                />
+                    />
             </div>
                     <div className='cardConteiner' >
-                {currentGames?.map((game) => (
+                            {currentGames?.map((game) => (
                         <Link to = {'/videogame/'+game.id}>
                         <Card 
                             name = { game.name }
@@ -97,9 +95,8 @@ export default function Home (){
                             background_image = { game.background_image }
                             />
                         </Link>
-                ))}
-                    </div>
-               
+                            ))}
+                    </div>               
         </div>
     )
 };
