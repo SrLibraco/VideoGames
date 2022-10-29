@@ -1,0 +1,10 @@
+.selGenre{
+background-color: rgba(86, 22, 22, 0.286);
+border-color: rgba(237, 121, 38, 0.254);
+margin-left: 3px;
+margin-right: 3px;
+color: rgba(237, 121, 38, 0.822);
+font-size: large;
+font-family:sans-serif;
+font-style:unset
+}

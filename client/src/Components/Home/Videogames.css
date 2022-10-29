@@ -11,3 +11,106 @@ h1{
     padding-left: 2rem;
     color: rgb(237, 121, 38);
 }
+
+.videogames{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cardConteiner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 7rem;
+    padding-bottom: 3rem;
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recBtn{
+    
+    background-color: rgba(165, 42, 42, 0.153);
+    border-color: rgba(237, 121, 38, 0.254);
+    border-radius: 0% 7% 0% 7%;
+    margin-left: 43%;
+    margin-right: 43%;
+    margin-bottom: 1rem;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset;
+    justify-content: center;
+}
+
+.filters{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+}
+.search{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: center;
+}
+.genre{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 15px;
+    justify-content: center;
+}
+.nameOrder{
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    justify-content: center;
+}
+.rating{
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    justify-content: center;
+}
+.create{
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    justify-content: center;
+}
+.selName{
+    background-color: rgba(86, 22, 22, 0.286);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset
+}
+.selRating{
+    background-color: rgba(86, 22, 22, 0.286);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset
+}
+.selCreate{
+    background-color: rgba(86, 22, 22, 0.286);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getGameName } from "../../Redux/Actions/Actions";
+import './SearchBar.css'
 
 export default function SearchBar() {
     const dispatch = useDispatch();
@@ -25,8 +26,8 @@ export default function SearchBar() {
     return(
         <div>
             <form onSubmit={e => handleSubmit(e)}>
-                <div>                    
-                    <input
+                <div className="todo">                    
+                    <input className="search"
                         type='text'
                         id='name'
                         value={game}

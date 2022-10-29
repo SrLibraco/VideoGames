@@ -49,43 +49,47 @@ export default function Home (){
     }
 
     return(
-        <div>
-            <video src={elVideo} autoPlay='true' muted='true' loop='true'></video>
+        <div className='videogames'>
+            <video src={elVideo} autoPlay={true} muted={true} loop={true}></video>
             <h1>Juegos Para Todos</h1>
-            <SearchBar />
-            <GenreSelection
+            <div className='filters'>
+            <div><SearchBar className='search' /></div>
+            <div className='genre'><GenreSelection 
                 allGenres={allGenre}
-            />
-            <div>
-             <select onChange={e => handleByName(e)}>
-                                <option value="alpha">Alphabetically Sort</option>
+            /></div>
+            <div className='nameOrder'>
+             <select className ='selName' onChange={e => handleByName(e)}>
+                                <option value="alpha">Name Order</option>
                                 <option value="asc">Sort:  A - Z</option>
                                 <option value="des">Sort:  Z - A</option>
                             </select>
             </div>
-            <div>
-                <select onChange={e => handleByRating(e)}>
+            <div className='rating'>
+                <select className='selRating' onChange={e => handleByRating(e)}>
                         <option value="Rating">Rating</option>
                         <option value="Hight">Hight Rating</option>
                         <option value="Low">Low Rating</option>
                 </select>
             </div>
-            <div>
-                <select onChange={e => handleByCreated(e)}>
+            <div className='create'>
+                <select className='selCreate' onChange={e => handleByCreated(e)}>
                     <option value="Games">All Games</option>
                     <option value="api">Api Games</option>
                     <option value="Created">Created Games</option>
                 </select>
             </div>
-            <button onClick={e => {handleClick(e)}}>Recargar.</button>
-            <Pagination
+            </div>
+            <button className='recBtn' onClick={e => {handleClick(e)}}>Reload Games.</button>
+            <div className='pagination'>
+                <Pagination 
                         gamesPerPage={gamesPerPage}
                         allGames={allGames.length}
                         pagination={pagination}
                         currentPage={currentPage}
                 />
+            </div>
+                    <div className='cardConteiner' >
                 {currentGames?.map((game) => (
-                    <div key={game.id} >
                         <Link to = {'/videogame/'+game.id}>
                         <Card 
                             name = { game.name }
@@ -93,8 +97,9 @@ export default function Home (){
                             background_image = { game.background_image }
                             />
                         </Link>
-                    </div>
                 ))}
+                    </div>
+               
         </div>
     )
 };

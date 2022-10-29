@@ -1,0 +1,11 @@
+.pagi button{
+    background-color: rgba(165, 42, 42, 0.153);
+    border-color: rgba(237, 121, 38, 0.254);
+    border-radius: 20%;
+    margin-left: 3px;
+    margin-right: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset
+}

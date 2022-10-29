@@ -3,5 +3,19 @@ img{
     height: auto;
 }
 text{
-    color:  rgb(237, 121, 38);
+    color:  rgb(237, 121, 38);   
+}
+.Cards{
+    margin: 15px;
+    text-align: center;
+    background-color: rgba(237, 121, 38, 0.219);
+    border-radius: 3% 0%;
+}
+
+.genreCard{
+    padding-bottom: 1rem;
+}
+.nameCard{
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
 }

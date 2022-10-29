@@ -1,0 +1,41 @@
+.detail{
+    display: flex;
+    align-content: center;    
+    padding-bottom: 3rem;
+    text-align: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.titulin .name{
+    margin-bottom: 30px;
+    margin-top: 35px;
+    margin-right: 13rem;
+    text-align: end;
+}
+.plat{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    justify-content: center;
+}
+.imgD{
+     width: 68%;
+    height: auto;  
+    justify-content: center;
+}
+.imagen{
+   display: flex;
+   align-content: center;
+   justify-content: center;
+   
+}
+/* .btn{
+    display: flex;
+    align-items: center;
+    
+    padding-top: 3rem;
+    justify-content: center;
+} */
+p{
+    justify-content: center;
+}
