@@ -3,7 +3,6 @@ export const GET_VIDEOGAMES = 'GET_VIDEOGAMES';
 export const GAME_BY_ID = 'GAME_BY_ID';
 export const GAME_BY_NAME = 'GAME_BY_NAME';
 export const CREATE_GAME = 'CREATE_GAME';
-export const SHOW_CREATED_GAMES = 'SHOW_CREATED_GAMES';
 export const GET_GENRES = 'GET_GENRES';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const ORDER_BY_RATING = 'ORDER_BY_RATING';
@@ -42,7 +41,7 @@ export function getGameName(name) {
 
 export function createGame(videogame) {
     return async function (dispatch){
-        const gameCreated = await axios.get('http://localhost:3001/videogames', videogame);
+        const gameCreated = await axios.post('http://localhost:3001/videogames', videogame);
         return dispatch({
             type: CREATE_GAME,
             payload: gameCreated.payload

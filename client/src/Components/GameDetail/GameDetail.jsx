@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getGameDetails } from "../../Redux/Actions/Actions";
 import { Link } from "react-router-dom";
+import elVideo from '../../Archives/BackGround.mp4'
 import './GameDetail.css'
 
 export default function Detail() {
@@ -21,6 +22,7 @@ export default function Detail() {
 
     return(      
         <div className="titulin">
+            <video src={elVideo} autoPlay={true} muted={true} loop={true}></video>
                        <h1 className="name">{gameDetails.name}</h1>
                    <div className="detail">
                         <div >
@@ -31,7 +33,7 @@ export default function Detail() {
                             <div>{gameDetails.description?.replace(regex, '').replace('&#39', '')}</div>
                             <div className="plat">{gameDetails.platforms?.join(', ')}</div>
                         
-                        <Link  to='/videogames'><button>Back</button></Link>
+                        <Link  to='/videogames'><button className='btnBack'>Back</button></Link>
                         </div>
                         
                     </div>

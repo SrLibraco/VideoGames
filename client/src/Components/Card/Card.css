@@ -9,13 +9,22 @@ text{
     margin: 15px;
     text-align: center;
     background-color: rgba(237, 121, 38, 0.219);
-    border-radius: 3% 0%;
+    border-radius: 3% ;
 }
 
 .genreCard{
-    padding-bottom: 1rem;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color:  rgb(239, 155, 94);
+    background-color: rgba(47, 25, 9, 0.36);
+    border-radius: 15% 3% 15% 3%;
 }
 .nameCard{
-    padding-top: 0.5rem;
-    padding-bottom: 1rem;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-emphasis-color:  rgb(239, 151, 88);
+    color:  rgb(239, 155, 94);
+    background-color: rgba(47, 25, 9, 0.36);
+    border-radius: 3% 15% 3% 15%;
 }
+

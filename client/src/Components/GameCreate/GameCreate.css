@@ -1,0 +1,116 @@
+.btnCreation{
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    margin: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset;
+    padding: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.btnBack{
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    margin: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset
+}
+.inputName{
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    margin: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset
+}
+.inputDate {
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    margin: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset
+}
+.inputRate{
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    margin: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset
+}
+.inputImage{
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    margin: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset
+}
+.textDesc{
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    margin: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset
+}
+.selectGenre{
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    margin: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset;
+}
+.selectPlat{
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 3px;
+    margin-right: 3px;
+    margin: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset;
+}
+.formu{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 13%;
+    margin-right: 13%;
+    color:rgba(237, 121, 38, 0.822);
+    background-color: rgba(0, 0, 0, 0.698);
+    padding: 3rem;
+    border-radius: 3%;
+    font-size: x-large;
+}

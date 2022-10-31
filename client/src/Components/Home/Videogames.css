@@ -8,7 +8,7 @@ video {
 h1{
     margin: 0;
     padding-top: 3rem;
-    padding-left: 2rem;
+    padding-left: 6rem;
     color: rgb(237, 121, 38);
 }
 
@@ -33,7 +33,7 @@ h1{
 
 .recBtn{
     
-    background-color: rgba(165, 42, 42, 0.153);
+    background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     border-radius: 0% 7% 0% 7%;
     margin-left: 43%;
@@ -85,7 +85,7 @@ h1{
     justify-content: center;
 }
 .selName{
-    background-color: rgba(86, 22, 22, 0.286);
+    background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     margin-left: 3px;
     margin-right: 3px;
@@ -95,7 +95,7 @@ h1{
     font-style:unset
 }
 .selRating{
-    background-color: rgba(86, 22, 22, 0.286);
+    background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     margin-left: 3px;
     margin-right: 3px;
@@ -105,7 +105,7 @@ h1{
     font-style:unset
 }
 .selCreate{
-    background-color: rgba(86, 22, 22, 0.286);
+    background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     margin-left: 3px;
     margin-right: 3px;
@@ -113,4 +113,17 @@ h1{
     font-size: large;
     font-family:sans-serif;
     font-style:unset
+}
+
+.btnCreate{
+    
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgba(237, 121, 38, 0.254);
+    margin-left: 87%;
+    margin-right: 3px;
+    color: rgba(237, 121, 38, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset;
+    justify-content: flex-end
 }

@@ -13,6 +13,16 @@ h1{
 }
 .btnGames{
     position: absolute;
-    left: 90%;
-    top:73%;
+    left:83%;
+    right: 5%;
+    top:68%;
+    background-color: rgba(0, 0, 0, 0.698);
+    border-color: rgb(243, 147, 78);
+    color: rgba(246, 150, 82, 0.822);
+    font-size: large;
+    font-family:sans-serif;
+    font-style:unset;
+    padding: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
 }

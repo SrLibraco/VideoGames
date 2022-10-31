@@ -52,6 +52,7 @@ export default function Home (){
         <div className='videogames'>
                 <video src={elVideo} autoPlay={true} muted={true} loop={true}></video>
                 <h1>Juegos Para Todos</h1>
+                <Link to='/videogame'><button className='btnCreate'>Create Game!</button></Link>
             <div className='filters'>
             <div><SearchBar className='search' /></div>
             <div className='genre'><GenreSelection allGenres={allGenre} /></div>
