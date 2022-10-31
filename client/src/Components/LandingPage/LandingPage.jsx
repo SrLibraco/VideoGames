@@ -8,9 +8,9 @@ export default function LandingPage() {
        
         <div className="VideoBack">
             <video src={elVideo} autoPlay='true' muted='true' loop='true'></video>
-            <h1>Lo Jueguito</h1>
+            <h1>BBG VideoGames App</h1>
             <Link to= '/videogames'>
-                <button className="btnGames">To los Juegos..</button>
+                <button className="btnGames">Go To Play...</button>
             </Link>
         </div>
         

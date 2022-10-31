@@ -51,7 +51,7 @@ export default function Home (){
     return(
         <div className='videogames'>
                 <video src={elVideo} autoPlay={true} muted={true} loop={true}></video>
-                <h1>Juegos Para Todos</h1>
+                <h1>BBG VideoGames App</h1>
                 <Link to='/videogame'><button className='btnCreate'>Create Game!</button></Link>
             <div className='filters'>
             <div><SearchBar className='search' /></div>
