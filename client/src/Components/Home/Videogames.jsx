@@ -96,8 +96,16 @@ export default function Home (){
                             background_image = { game.background_image }
                             />
                         </Link>
-                            ))}
-                    </div>               
+                            ))} </div> 
+                    <div className='pagination'>
+                        <Pagination 
+                            gamesPerPage={gamesPerPage}
+                            allGames={allGames.length}
+                            pagination={pagination}
+                            currentPage={currentPage}
+                        />           
+                    </div>
+                      
         </div>
     )
 };

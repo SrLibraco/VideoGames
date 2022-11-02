@@ -100,10 +100,8 @@ let newSet = [...new Set(setArray)];
 
 return(
     <div>
-    <div>
-    <div>
-    <video src={elVideo} autoPlay={true} muted={true} loop={true}></video>
-        <div>
+        <video src={elVideo} autoPlay={true} muted={true} loop={true}></video>
+        
             <div>
                 <h1>Create your GAME.</h1>
                 <form onSubmit={e => handleSubmit(e)}>
@@ -119,8 +117,7 @@ return(
                                 autoComplete='off'
                                 placeholder='Name'
                                 onChange={e => handleChange(e)}
-                            />
-                            {/* {!input.name || !expReg.test(input.name) ? <h3>{'Enter a VALID name.'}</h3> : false} */}
+                            />                            
                         </div>
 
                         <div>
@@ -159,7 +156,7 @@ return(
                                 name='background_image'
                                 required=''
                                 autoComplete='off'
-                                placeholder='http://image_path.jpg'
+                                placeholder='Image URL'
                                 onChange={e => handleChange(e)}
                             />
                         </div>
@@ -178,7 +175,7 @@ return(
                             />
                         </div>
 
-                        <div>
+                        <div className='selects'>
                             <div>
                                 <select className='selectGenre' onChange={e => handleSelectGenres(e)}>
                                     <option value='gen'>Genres</option>
@@ -193,32 +190,29 @@ return(
                                 </select>
                             </div>
                         </div>
-                        
+            <div className='genreplat'>
+            <div className='losgenres'>
+                {input.genres.map(e => 
+                    <div key ={e}>
+                        <p onClick={() => handleDeleteGenre(e)}>{e}</p>
+                    </div>
+                    )}
+            </div>
+
+            <div className='losplat'>
+                {input.platforms.map(e =>
+                    <div key={e}>
+                        <p onClick={() => handleDeletePlatform(e)}>{e}</p>
+                    </div>
+                    )}
+            </div>
+            </div>
                         <button className='btnCreation' type='submit' disabled={false}>Create</button>
                         <Link to='/videogames'><button className='btnBack'>Back</button></Link>
                         
                     </div>
                 </form>
-            </div>
-        </div>
-
-        <div>
-            {input.genres.map(e => 
-                <div key ={e}>
-                    <p onClick={() => handleDeleteGenre(e)}>{e}</p>
-                </div>
-            )}
-        </div>
-
-        <div>
-            {input.platforms.map(e =>
-                <div key={e}>
-                    <p onClick={() => handleDeletePlatform(e)}>{e}</p>
-                </div>
-                )}
-        </div>
-    </div>
-    </div>
+            </div>        
     </div>
 );
 };

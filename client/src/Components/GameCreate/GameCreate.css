@@ -24,6 +24,8 @@
     font-style:unset
 }
 .inputName{
+    display: flex;
+    flex-direction: row;
     background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     margin-left: 3px;
@@ -35,6 +37,8 @@
     font-style:unset
 }
 .inputDate {
+    display: flex;
+    flex-direction: row;
     background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     margin-left: 3px;
@@ -46,6 +50,8 @@
     font-style:unset
 }
 .inputRate{
+    display: flex;
+    flex-direction: row;
     background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     margin-left: 3px;
@@ -57,6 +63,8 @@
     font-style:unset
 }
 .inputImage{
+    display: flex;
+    flex-direction: row;
     background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     margin-left: 3px;
@@ -68,6 +76,8 @@
     font-style:unset
 }
 .textDesc{
+    display: flex;
+    flex-direction: row;
     background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     margin-left: 3px;
@@ -79,6 +89,8 @@
     font-style:unset
 }
 .selectGenre{
+    display: flex;
+    flex-direction: row;
     background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     margin-left: 3px;
@@ -90,6 +102,8 @@
     font-style:unset;
 }
 .selectPlat{
+    display: flex;
+    flex-direction: row;
     background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     margin-left: 3px;
@@ -100,8 +114,16 @@
     font-family:sans-serif;
     font-style:unset;
 }
+.selects{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   
+    
+}
 .formu{
     display: flex;
+    align-content: center;
     align-items: center;
     flex-direction: column;
     margin-top: 10%;
@@ -113,4 +135,35 @@
     padding: 3rem;
     border-radius: 3%;
     font-size: x-large;
+    justify-content: center;
+}
+.losgenres{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0.2rem;
+    color:rgba(237, 121, 38, 0.822);
+    background-color: rgba(0, 0, 0, 0.018);
+    padding: 0.5rem;
+    border-radius: 3%;
+    font-size:medium;
+    justify-content: center;
+}
+.losplat{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0.2rem;
+    color:rgba(237, 121, 38, 0.822);
+    background-color: rgba(0, 0, 0, 0.018);
+    padding: 0.5rem;
+    border-radius: 3%;
+    font-size:medium;
+    justify-content: center;
+}
+.genreplat{
+    display: flex;
+    flex-direction: row;
 }

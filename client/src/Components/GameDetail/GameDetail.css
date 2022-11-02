@@ -2,11 +2,14 @@
     display: flex;
     align-content: center;    
     padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-align: center;
     justify-content: center;
     margin-top: 3rem;
     margin-left: 3rem;
     margin-right: 3rem;
+    margin-bottom: 3rem;
     color: rgba(237, 121, 38, 0.822);
     background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
