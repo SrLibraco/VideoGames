@@ -26,26 +26,36 @@ export function getGameDetails(id) {
             type: GAME_BY_ID,
             payload: gameDetail.data
         });
+    
     };
 };
 
 export function getGameName(name) {
     return async function (dispatch){
+        try{
         const gameNames = await axios.get(`http://localhost:3001/videogames?name=${name}`);
         return dispatch({
             type: GAME_BY_NAME,
             payload: gameNames.data
         });
+    }catch(error){
+        alert('No games found')
+    }
     };
 };
 
 export function createGame(videogame) {
     return async function (dispatch){
+        try{
         const gameCreated = await axios.post('http://localhost:3001/videogames', videogame);
         return dispatch({
             type: CREATE_GAME,
-            payload: gameCreated.payload
+            payload: gameCreated.payload,
+            alert: alert('Game has been created')
         });
+    } catch (error){
+        alert('Name already exist');
+    }
     };
 };
 

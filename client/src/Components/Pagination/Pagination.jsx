@@ -13,9 +13,14 @@ export default function Pagination({gamesPerPage, currentPage, allGames, paginat
     return(
         <div className="pagi">
             <button onClick={()=>pagination(currentPage===1 ? pageNumber.length : currentPage -1)}>  «  </button>
-            {pageNumber && pageNumber.map(number => (
-                <button key={number} onClick={()=> pagination(number)}> {currentPage === number ? <b>{number}</b> : number}</button>
-            ))}
+           
+                {pageNumber && pageNumber.map(number => (
+                <button key={number} onClick={()=> pagination(number)}>
+                    {currentPage === number ? <b>{number}</b> : number}
+                </button>
+                ))
+                }
+            
             <button onClick={()=>pagination(currentPage === 0 ? currentPage : currentPage +1)}>  »  </button>
         </div>
     );

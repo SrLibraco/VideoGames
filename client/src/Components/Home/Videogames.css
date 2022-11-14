@@ -40,9 +40,11 @@ h1{
     background-color: rgba(0, 0, 0, 0.698);
     border-color: rgba(237, 121, 38, 0.254);
     border-radius: 0% 7% 0% 7%;
-    margin-left: 43%;
+    margin-left: 45.5%;
     margin-right: 43%;
     margin-bottom: 1rem;
+    padding-left: 25px;
+    padding-right: 25px;
     color: rgba(237, 121, 38, 0.822);
     font-size: large;
     font-family:sans-serif;

@@ -6,11 +6,35 @@ import { Link, useHistory } from 'react-router-dom';
 import elVideo from '../../Archives/BackGround.mp4'
 import './GameCreate.css';
 
+function validate(input){
+    let errors = {};
+    if (!input.name){
+        errors.name = 'Name is required'
+    }
+    else if(!input.date){
+        errors.date = 'Date is required'
+    }
+    else if (!input.rating || input.rating < 0 || input.rating > 5){
+        errors.rating = 'Rating must be 0 to 5'
+    }
+    else if (!input.platforms){
+        errors.platforms = 'Platform is required'
+    }
+    else if (!input.genres){
+        errors.genres = 'Genre is required'
+    }
+    else if (!input.description){
+        errors.description = 'Description is required'
+    }
+    return errors;
+}
+
 export default function VideogamesCreation() {
     const dispatch = useDispatch();
     const history = useHistory();
     const fullGenres = useSelector(state => state.allGenres);
     const games = useSelector(state => state.videogames);
+    const [errors, setErrors] = useState({});
     const [input, setInput] = useState({
         name: '',
         description: '',
@@ -32,13 +56,20 @@ export default function VideogamesCreation() {
         setInput({
             ...input,
             [e.target.name] : e.target.value
-        });
+        })
+        setErrors(validate({
+            ...input, [e.target.name]: e.target.value
+        }));
     };
     function handleSelectGenres(e){
         setInput({
             ...input,
             genres: [...new Set([...input.genres, e.target.value])]
         });
+        setErrors(validate({
+            ...input,
+            genres: [...input.genres, e.target.value]
+        }));
     };
     function handleDeleteGenre(e){
         setInput({
@@ -51,6 +82,10 @@ export default function VideogamesCreation() {
             ...input,
             platforms: [...new Set([...input.platforms, e.target.value])]
         });
+        setErrors(validate({
+            ...input,
+            platforms: [...input.platforms, e.target.value]
+        }));
     };
     function handleDeletePlatform(e){
         setInput({
@@ -67,6 +102,8 @@ export default function VideogamesCreation() {
             return alert('Enter game name.');
         }else if(!expReg.test(input.name)){
             return alert('Invalid characters for Name.');
+        }else if(input.name === games.filter(names => names.name === input.name)){
+            alert('Name already exist') 
         }else if(!input.description){
             return alert('Enter description.');
         }else if(!input.date){
@@ -78,19 +115,22 @@ export default function VideogamesCreation() {
         }else if(!input.platforms.length){
             return alert('Select at least 1 platform.');
         }
-
+      
     dispatch(createGame(input));
-    alert('VideoGame has been Created!');
-    setInput({
-        name:'',
-        description:'',
-        date:'',
-        rating:'',
-        genres:[],
-        platforms:[],
-        background_image:''
-    });
-    history.push('/videogames');
+    try{
+        setInput({
+            name:'',
+            description:'',
+            date:'',
+            rating:'',
+            genres:[],
+            platforms:[],
+            background_image:''
+        })
+        history.push('/videogames') 
+ }catch (error){
+    alert('Name already exist')
+ }
 }
 
 
@@ -107,7 +147,7 @@ return(
                 <form onSubmit={e => handleSubmit(e)}>
                     <div className='formu'>
                         <div>
-                            <label htmlFor='name'>Name: </label>
+                            <label htmlFor='name'>Name: </label>{errors.name && (<h5>{errors.name}</h5>)}    
                             <input
                                 className='inputName'
                                 type='text'
@@ -117,11 +157,11 @@ return(
                                 autoComplete='off'
                                 placeholder='Name'
                                 onChange={e => handleChange(e)}
-                            />                            
+                            />                    
                         </div>
 
                         <div>
-                            <label htmlFor='date'>Released: </label>
+                            <label htmlFor='date'>Released: </label>{errors.date && (<h5>{errors.date}</h5>)}    
                             <input
                                 className='inputDate'
                                 type='date'
@@ -134,7 +174,7 @@ return(
                         </div>
 
                         <div>
-                            <label htmlFor='rating'>Rating: </label>
+                            <label htmlFor='rating'>Rating: </label>{errors.rating && (<h5>{errors.rating}</h5>)}    
                             <input
                                 className='inputRate'
                                 type='text'
@@ -162,7 +202,7 @@ return(
                         </div>
 
                         <div>
-                            <label htmlFor='description'>Description: </label>
+                            <label htmlFor='description'>Description: </label>{errors.description && (<h5>{errors.description}</h5>)}    
                             <textarea
                                 className='textDesc'
                                 type='text'
@@ -177,15 +217,17 @@ return(
 
                         <div className='selects'>
                             <div>
-                                <select className='selectGenre' onChange={e => handleSelectGenres(e)}>
-                                    <option value='gen'>Genres</option>
+                            <label htmlFor='background_image'>Genres: </label>
+                                <select className='selectGenre' onChange={e => handleSelectGenres(e)}>{errors.genres && (<h5>{errors.genres}</h5>)}    
+                                    <option value='gen'></option>
                                     { fullGenres.map(e => (<option key={e.id} value={e.name}>{e.name}</option>))}
                                 </select>
                             </div>
 
                             <div>
-                                <select className='selectPlat' onChange={e => handleSelectPlatform(e)}>
-                                    <option value='plat'>Platforms</option>
+                            <label htmlFor='background_image'>Platforms: </label>
+                                <select className='selectPlat' onChange={e => handleSelectPlatform(e)}>{errors.platforms && (<h5>{errors.platforms}</h5>)}    
+                                    <option value='plat'></option>
                                     { newSet.map(e => ( <option key={e} value={e}>{e}</option>))}
                                 </select>
                             </div>

@@ -9,7 +9,7 @@ text{
     margin: 15px;
     text-align: center;
     background-color: rgba(237, 121, 38, 0.219);
-    border-radius: 3% ;
+    border-radius: 15% 3% 15% 3% ;
 }
 
 .genreCard{

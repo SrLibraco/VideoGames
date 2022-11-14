@@ -18,15 +18,19 @@ export default function Home (){
     const gamesPerPage = 15;
     const indexOfLastGame = currentPage * gamesPerPage;
     const indexOfFirstGame = indexOfLastGame - gamesPerPage;
-    const currentGames = allGames.slice(indexOfFirstGame, indexOfLastGame);    
+    const currentGames = allGames?.slice(indexOfFirstGame, indexOfLastGame);    
     
     const pagination = (pageNumber)=> {
         setCurrentPage(pageNumber);
     };
 
+    
     useEffect(() => {
-        dispatch(getVideogames());
+        if (allGames.length === 0){
+            dispatch(getVideogames())
+        }
     }, [dispatch]);
+
 
     function handleClick(e){
         e.preventDefault();
@@ -52,6 +56,7 @@ export default function Home (){
         <div className='videogames'>
                 <video src={elVideo} autoPlay={true} muted={true} loop={true}></video>
                 <h1>BBG VideoGames App</h1>
+                {allGames.length ? <div>
                 <Link to='/videogame'><button className='btnCreate'>Create Game!</button></Link>
             <div className='filters'>
             <div><SearchBar className='search' /></div>
@@ -89,8 +94,8 @@ export default function Home (){
             </div>
                     <div className='cardConteiner' >
                             {currentGames?.map((game) => (
-                        <Link to = {'/videogame/'+game.id}>
-                        <Card 
+                                <Link to = {'/videogame/'+game.id}>
+                                <Card 
                             name = { game.name }
                             genre = { game.genres?.map(gen => (gen.name ? gen.name : gen)).join(' | ') }
                             background_image = { game.background_image }
@@ -105,7 +110,7 @@ export default function Home (){
                             currentPage={currentPage}
                         />           
                     </div>
-                      
+                      </div> : <h1>Coming soon...</h1>}
         </div>
     )
 };

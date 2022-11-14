@@ -5,10 +5,6 @@ import LandingPage from './Components/LandingPage/LandingPage';
 import Home from './Components/Home/Videogames.jsx'
 import GameDetail from './Components/GameDetail/GameDetail.jsx';
 import VideogamesCreation from './Components/GameCreate/GameCreate';
-/* import Nav from './Components/Nav/Nav.jsx';
-import GameCreate from './Components/GameCreate/GameCreate.jsx';
-import GameDetail from './Components/GameDetail/GameDetail.jsx'; */
-
 
 
 function App() {
