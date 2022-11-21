@@ -29,24 +29,37 @@ const getVideogames = async () => {
 };
 
 const getVideogamesDb = async () => {
+    let dbInfo = []
     try{
-        return await Videogames.findAll({
-            include: [{
-                model: Genres,
-                atributes: ['name'],
-                throught: {
-                    atributes: []
-                }
-            }]
+        let allInDB = await Videogames.findAll({
+            include: Genres,
         });
-    }catch (error){
-        return "No games in DB."
-    };
+         allInDB = JSON.stringify(allInDB);
+         allInDB = JSON.parse(allInDB);
+        let videogamesDB = allInDB.map((vgame) => {
+          //  let genresAll = vgame.Genres.map((gen) => gen.name);
+            dbInfo.push({
+                id: vgame.id,
+                name: vgame.name,
+                date: vgame.released,
+                genres: vgame.Genres.map((gen) => gen.name),
+                rating: vgame.rating,
+                description: vgame.description,
+                platforms: vgame.platforms,
+                background_image: vgame.background_image,
+                createInDB: vgame.createInDB
+            })
+        })
+        return dbInfo;
+    }catch(error){
+        console.log(error)
+    }
 };
 
 const totalVideogames = async () => {
     const apiGames = await getVideogames();
     const dbGames = await getVideogamesDb();
+    
     const dbGamesApi = dbGames.concat(apiGames);
     return dbGamesApi;
 };
@@ -56,3 +69,22 @@ module.exports = {
     getVideogamesDb,
     totalVideogames
 };
+
+
+
+
+
+/*
+try{
+       let videoGamesDB = await Videogames.findAll({
+            include: {
+                model: Genres,
+                attributes: ["name"],
+                throught: { attributes: [], }
+            }
+        });
+        return videoGamesDB
+    }catch (error){
+        return "No games in DB."
+    };
+*/

@@ -8,6 +8,7 @@ export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const ORDER_BY_RATING = 'ORDER_BY_RATING';
 export const FILTER_GENRE = 'FILTER_GENRE';
 export const FILTER_CREATED = 'FILTER_CREATED';
+export const CLEAN = 'CLEAN';
 
 export function getVideogames() {
     return async function (dispatch) {
@@ -96,3 +97,11 @@ export function filterByCreated(created){
         payload: created
     };
 };
+
+export function clean(){
+    return function(dispatch){
+        dispatch({
+            type: CLEAN
+        })
+    }
+}

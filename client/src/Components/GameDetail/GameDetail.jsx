@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getGameDetails } from "../../Redux/Actions/Actions";
+import { getGameDetails, clean } from "../../Redux/Actions/Actions";
 import { Link } from "react-router-dom";
 import elVideo from '../../Archives/BackGround.mp4'
 import image from '../../Archives/joystick.png'
@@ -16,6 +16,7 @@ export default function Detail() {
 
     useEffect(() => {
         dispatch(getGameDetails(id))
+        return () => dispatch(clean())
     }, [dispatch]);
     
 

@@ -1,13 +1,15 @@
 require('dotenv').config();
 const { API_KEY } = process.env;
 const axios = require('axios');
-const { Videogames, Genres } = require('../db')
+const { Videogames, Genres } = require('../db');
+const { getVideogamesDb, totalVideogames } = require('./getVideogames');
 
 const getDetail = async (id) => {
+    let videogameInfo = []
     try{
     const apiInfo = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`);
     const idGame = await apiInfo.data
-    const gameDetail = {
+    const gameDetail = videogameInfo.push({
             name: idGame.name,
             description: idGame.description,
             date: idGame.released,
@@ -15,8 +17,8 @@ const getDetail = async (id) => {
             genres: idGame.genres?.map((gen) => gen.name),
             platforms: idGame.platforms?.map((plat) => plat.platform.name),
             background_image: idGame.background_image
-    };
-    return gameDetail;
+    });
+    return videogameInfo;
     }catch (error){
         return "Invalid ID"
     }   
@@ -24,18 +26,14 @@ const getDetail = async (id) => {
 
 const getDbDetail = async (id) => {
     try{
-        return await Videogames.findByPk(id, {
-            include: [{
-                model: Genres,
-                atributes: ['name'],
-                throught: {
-                    attributes: []
-                }
-            }]
-        });
-    } catch (error) {
-        return "Invalid ID";
-    };
+        const vgamesdb = await getVideogamesDb();
+        let gamesId = await vgamesdb.filter((gam) => gam.id === id)
+       
+        return gamesId
+        
+    }catch(error){
+        console.log(error);
+    }
 };
 
 const dbApiDetail = async (id) => {
@@ -54,3 +52,20 @@ module.exports = {
     getDbDetail,
     dbApiDetail
 };
+
+
+/*
+try{
+        return await Videogames.findByPk(id, {
+            include: {
+                model: Genres,
+                attributes: ['name'],
+                throught: {
+                    attributes: []
+                }
+            }
+        });
+    } catch (error) {
+        return "Invalid ID";
+    };
+*/

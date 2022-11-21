@@ -1,4 +1,4 @@
-import { CREATE_GAME, FILTER_CREATED, FILTER_GENRE, GAME_BY_ID, GAME_BY_NAME, GET_GENRES, GET_VIDEOGAMES, ORDER_BY_NAME, ORDER_BY_RATING } from "../Actions/Actions.js";
+import { CLEAN, CREATE_GAME, FILTER_CREATED, FILTER_GENRE, GAME_BY_ID, GAME_BY_NAME, GET_GENRES, GET_VIDEOGAMES, ORDER_BY_NAME, ORDER_BY_RATING } from "../Actions/Actions.js";
 
 const initialState = {
     allVideogames: [],
@@ -93,7 +93,12 @@ const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 videogames: action.payload === "Games" ? state.allVideogames : filterCreated
-            }
+            };
+        case CLEAN:
+            return{
+                ... state,
+                gamesDetail: []
+            };
         default:
             return {
                 ...state

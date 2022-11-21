@@ -31,10 +31,7 @@ module.exports = (sequelize) => {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
-    genres: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false
-    },
+
     background_image: {
       type: DataTypes.STRING,
     },
